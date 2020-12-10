@@ -3,7 +3,7 @@ GitHub桌面版
 
 ## 安装Git bash
 
-进入GitHub官网git-scm.com，下载适合自己电脑的版本并安装
+进入GitHub官网git-scm.com，下载适合自己电脑的版本并安装  
 *本文中使用的是Windows64版本*
 
 ## 对git bash进行配置
