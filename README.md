@@ -8,16 +8,16 @@ GitHub桌面版
 
 ## 对git bash进行配置  
   
-**1. 在本地创建一个ssh key<br/>**
+**1. 在本地创建一个ssh key**
 
     $ ssh-keygen-t rsa -C "your_email@youremail.com"
 引号内需要改成你在注册GitHub的时候绑定的邮箱账号。之后会有一些简单的让你确认的操作，之后让你会提示操作路径、密码等等，一般情况下就直接按回车一路过就可以  
 **2. 复制密钥**  
 到他刚刚显示的默认存储位置或是自己选择的储存位置，打开该文件，找到id_rsa.pub，用记事本打开并复制密钥，密钥以ssh-rsa开头，结尾是用户邮箱  
 **3. 登录到你的GitHub添加这个密匙**  
-打开GitHub设置界面，找到SSH and GPG keys这个选项，在网页右上角有一个添加新的SSH keys  
+打开GitHub设置界面，找到SSH and GPG keys这个选项，在网页右上角点击添加新的SSH keys  
 在title给你的密匙起一个名字，然后将复制的密匙填入框中保存即可  
-之后回到你的Git bash上，然后输入下边的代码边
+之后回到你的Git bash上，然后输入下边的代码
 
     $ ssh -T git@github.com
 第一次绑定的时候输入上边的代码之后会提示是否continue，在输入yes后如果出现了：You've successfully authenticated, but GitHub does not provide shell access 那就说明，已经成功连上了GitHub  
@@ -30,7 +30,7 @@ GitHub桌面版
 ## 使用git bash进行代码下载和上传  
 
 **1. 将GitHub上的的Repository克隆到本地电脑中**  
-根据个人习惯，例如将自己的文件储存在d盘之中，所以需要将git bash定位在d盘中  
+根据个人习惯，可以将自己的文件储存在d盘中，所以需要将git bash定位在d盘  
 
     $ cd /D
     $ git clone https://github.com/blueberrygarden/How-to-use-Git-on-windows
