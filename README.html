@@ -1,0 +1,73 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title></title>
+<style id="system" type="text/css">h1,h2,h3,h4,h5,h6,p,blockquote {    margin: 0;    padding: 0;}body {    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;    font-size: 13px;    line-height: 18px;    color: #737373;    margin: 10px 13px 10px 13px;}a {    color: #0069d6;}a:hover {    color: #0050a3;    text-decoration: none;}a img {    border: none;}p {    margin-bottom: 9px;}h1,h2,h3,h4,h5,h6 {    color: #404040;    line-height: 36px;}h1 {    margin-bottom: 18px;    font-size: 30px;}h2 {    font-size: 24px;}h3 {    font-size: 18px;}h4 {    font-size: 16px;}h5 {    font-size: 14px;}h6 {    font-size: 13px;}hr {    margin: 0 0 19px;    border: 0;    border-bottom: 1px solid #ccc;}blockquote {    padding: 13px 13px 21px 15px;    margin-bottom: 18px;    font-family:georgia,serif;    font-style: italic;}blockquote:before {    content:"C";    font-size:40px;    margin-left:-10px;    font-family:georgia,serif;    color:#eee;}blockquote p {    font-size: 14px;    font-weight: 300;    line-height: 18px;    margin-bottom: 0;    font-style: italic;}code, pre {    font-family: Monaco, Andale Mono, Courier New, monospace;}code {    background-color: #fee9cc;    color: rgba(0, 0, 0, 0.75);    padding: 1px 3px;    font-size: 12px;    -webkit-border-radius: 3px;    -moz-border-radius: 3px;    border-radius: 3px;}pre {    display: block;    padding: 14px;    margin: 0 0 18px;    line-height: 16px;    font-size: 11px;    border: 1px solid #d9d9d9;    white-space: pre-wrap;    word-wrap: break-word;}pre code {    background-color: #fff;    color:#737373;    font-size: 11px;    padding: 0;}@media screen and (min-width: 768px) {    body {        width: 748px;        margin:10px auto;    }}</style><style id="custom" type="text/css"></style></head>
+<body marginheight="0" data-new-gr-c-s-check-loaded="14.986.0" data-gr-ext-installed=""><h1>GitHub桌面版</h1>
+<h2>1. 安装Git bash</h2>
+<h4>* 进入GitHub官网git-scm.com，下载适合自己电脑的版本并安装<br></h4>
+<p><em>本文中使用的是Windows64版本</em>
+<br>
+</p>
+<h2>2. 对git bash进行配置</h2>
+<h4>* 在本地创建一个ssh key</h4>
+<pre><code>$ ssh-keygen-t rsa -C "your_email@youremail.com"</code></pre>
+<p>引号内需要改成你在注册GitHub的时候绑定的邮箱账号。之后会有一些简单的让你确认的操作，之后让你会提示操作路径、密码等等，一般情况下就直接按回车一路过就可以
+</p>
+<h4>* 复制密钥</h4>
+<p>到他刚刚显示的默认存储位置或是自己选择的储存位置，打开该文件<br>
+找到id_rsa.pub，用记事本打开并复制密钥，密钥以ssh-rsa开头，结尾是用户邮箱
+</p>
+<h4>* 登录到你的GitHub添加这个密匙</h4>
+<p>打开GitHub设置界面，找到SSH and GPG keys这个选项，在网页右上角有一个添加新的SSH keys<br>
+在title给你的密匙起一个名字，然后将复制的密匙填入框中保存即可<br>
+之后回到你的Git bash上，然后输入下边的代码边<br>
+
+</p>
+<pre><code>$ ssh -T git@github.com</code></pre>
+<p>第一次绑定的时候输入上边的代码之后会提示是否continue，在输入yes后如果出现了：You've successfully authenticated, but GitHub does not provide shell access 那就说明，已经成功连上了GitHub
+</p>
+<h4>* 接下来进行一些简单的设置</h4>
+<pre><code>$ git config --global user.name "your name"
+$ git config --global user.email "your.email@gmail.com"</code></pre>
+<p>输入上边的代码，name最好和GitHub上边的一样，email是一定要是注册GitHub的那个邮箱地址
+</p>
+<h2>3. 使用git bash进行代码下载和上传</h2>
+<h4>* 将GitHub上的的Repository克隆到本地电脑中</h4>
+<p>根据个人习惯，例如将自己的文件储存在d盘之中，所以需要将git bash定位在d盘中
+
+</p>
+<pre><code>$ cd /D
+$ git clone https://github.com/blueberrygarden/How-to-use-Git-on-windows</code></pre>
+<p>git clone后边的网址就是你创建的Repository的网址，此时打开D盘会出现一个同名文件夹<br>
+打开文件，可以打开其中的文档，也可以创建一个任意格式任意名称的新文档<br>
+
+</p>
+<pre><code>$ cd /D/How-to-use-Git-on-windows</code></pre>
+<p>此时再将git bash定位到库的文件How-to-use-Git-on-windows
+
+</p>
+<pre><code>&amp; ls</code></pre>
+<p>ls的作用是查看你目前所定位的文件夹中的文件，此时里面将出现README.md等内容
+</p>
+<h4>* 创建新文档并上传到GitHub的库中</h4>
+<p>打开本地库的文件夹How-to-use-Git-on-windows，在其中创建一个新文档test.txt<br>
+在git bash中输入以下代码, 并给需要上传的文档进行备注
+
+</p>
+<pre><code>$ git add test.txt
+$ git commit -m "your commits" </code></pre>
+<p>然后将文档push到GitHub的库中，输入以下代码后需要先登路github，<strong><em>之后就上传成功啦！</em></strong>
+
+</p>
+<pre><code>$ git push origin main</code></pre>
+<p>"main" 要与你git bash输入指令前的一串路径标识最后（）中的内容相同<br>
+
+</p>
+<pre><code>****@PC*********** MINGW64 /D/How-to-use-Git-on-windows (main)
+$ </code></pre>
+<p>之后回到网页版GitHub中打开自己的库How-to-use-Git-on-windows，新的文档已经出现了
+
+
+</p>
+<p>Edit By <a href="http://mahua.jser.me">MaHua</a></p>
+</body></html>
