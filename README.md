@@ -1,10 +1,11 @@
 GitHub桌面版
 ======
 
-##1. 安装Git bash
-####* 进入GitHub官网git-scm.com，下载适合自己电脑的版本并安装<br/>
+### 1. 安装Git bash
+
+进入GitHub官网git-scm.com，下载适合自己电脑的版本并安装
 *本文中使用的是Windows64版本*
-<br/>
+
 ##2. 对git bash进行配置
 ####* 在本地创建一个ssh key
     $ ssh-keygen-t rsa -C "your_email@youremail.com"
