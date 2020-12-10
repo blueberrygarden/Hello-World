@@ -1,21 +1,21 @@
 GitHub桌面版
 ======
 
-### 1. 安装Git bash
+## 安装Git bash
 
 进入GitHub官网git-scm.com，下载适合自己电脑的版本并安装
 *本文中使用的是Windows64版本*
 
-### 2. 对git bash进行配置
+## 对git bash进行配置
 
-* 在本地创建一个ssh key<br/>
+**1.在本地创建一个ssh key<br/>**
 
     $ ssh-keygen-t rsa -C "your_email@youremail.com"
 引号内需要改成你在注册GitHub的时候绑定的邮箱账号。之后会有一些简单的让你确认的操作，之后让你会提示操作路径、密码等等，一般情况下就直接按回车一路过就可以
-* 复制密钥<br/>
+**复制密钥<br/>**
 到他刚刚显示的默认存储位置或是自己选择的储存位置，打开该文件
 找到id_rsa.pub，用记事本打开并复制密钥，密钥以ssh-rsa开头，结尾是用户邮箱
-* 登录到你的GitHub添加这个密匙<br/>
+**登录到你的GitHub添加这个密匙<br/>**
 打开GitHub设置界面，找到SSH and GPG keys这个选项，在网页右上角有一个添加新的SSH keys
 在title给你的密匙起一个名字，然后将复制的密匙填入框中保存即可
 之后回到你的Git bash上，然后输入下边的代码边
