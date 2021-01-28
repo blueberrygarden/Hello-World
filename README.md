@@ -98,16 +98,16 @@ Push an existing Git repository
     $ git push -u origin --tags
   
 可能遇到的问题  
-1. 在我们在提交git时有时候会出现错误[rejected] master -> master (fetch first)  
+1.在我们在提交git时有时候会出现错误[rejected] master -> master (fetch first)  
 出现这个原因是仓库中的代码和本地中的代码不一致，需要先将仓库里的代码pull下来再push     
     
     $ git pull --rebase origin master
     $ git add . 
     $ git commit -m "your commits"
-    $ git push origin master
-注意，pull前防止本地文件消失可以先将主要文件复制出去  
-还可以尝试下面这种强制push的方法
+    $ git push origin master  
+注意，pull前防止本地文件消失可以先将主要文件复制出去   
+还可以尝试下面这种强制push的方法  
     
     $ git push -f
-注意，这是强制将本地仓库上传，会覆盖原来仓库更新的内容，慎用
+注意，这是强制将本地仓库上传，会覆盖原来仓库更新的内容，慎用  
     
