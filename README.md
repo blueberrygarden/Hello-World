@@ -28,9 +28,6 @@ gitlab的ssh key绑定方式类似
     github
     $ git config --global user.name "blueberrygarden"
     $ git config --global user.email "jiaojiaoyutianan@gmail.com"
-    gitlab
-    $ git config --global user.name "Lou"
-    $ git config --global user.email "9242-ujjjh@users.noreply.git.scc.kit.edu"  
 输入上边的代码，name和email对应账户名称和注册邮箱  
 
 ## 使用git bash进行代码下载和上传  
@@ -40,11 +37,7 @@ gitlab的ssh key绑定方式类似
 
     github
     $ cd /d/git/
-    $ git clone https://github.com/blueberrygarden/yourrepo.git
-    gitlab
-    $ cd /d/git/
-    $ git clone https://git.scc.kit.edu/ujjjh/yourproject.git
-    
+    $ git clone https://github.com/blueberrygarden/yourrepo.git   
 git clone后边的网址就是你创建的Repository的网址，此时打开D盘会出现一个同名文件夹  
 打开文件，可以打开其中的文档，也可以创建一个任意格式任意名称的新文档
 
@@ -67,13 +60,13 @@ ls的作用是查看你目前所定位的文件夹中的文件，此时里面将
     ****@PC*********** MINGW64 /D/How-to-use-Git-on-windows (main) 
 之后回到网页版GitHub中打开自己的库How-to-use-Git-on-windows，新的文档已经出现了
 
-**gitlab使用说明**
-You can also upload existing files from your computer using the instructions below.
-    
-    $ Git global setup
+**gitlab使用说明**  
+You can also upload existing files from your computer using the instructions below.  
+Git global setup  
+
     $ git config --global user.name "Lou"
     $ git config --global user.email "9242-ujjjh@users.noreply.git.scc.kit.edu"
-Create a new repository
+Create a new repository  
     
     $ git clone git@git.scc.kit.edu:ujjjh/test.git
     $ cd test
@@ -81,7 +74,7 @@ Create a new repository
     $ git add README.md
     $ git commit -m "add README"
     $git push -u origin master
-Push an existing folder
+Push an existing folder  
     
     $ cd existing_folder
     $ git init
@@ -89,7 +82,7 @@ Push an existing folder
     $ git add .
     $ git commit -m "Initial commit"
     $ git push -u origin master
-Push an existing Git repository
+Push an existing Git repository  
     
     $ cd existing_repo
     $ git remote rename origin old-origin
