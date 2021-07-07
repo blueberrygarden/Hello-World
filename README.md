@@ -1,4 +1,4 @@
-GitHub桌面版
+Windows 使用Git
 ======
 
 ## 安装Git bash
@@ -31,14 +31,48 @@ gitlab的ssh key绑定方式类似
 输入上边的代码，name和email对应账户名称和注册邮箱
 
     git config user.name"Yanjiao Lou"：修改你本地一个仓库的用户名
-    git config user.email"Lou@fzi.com"：修改你本地一个仓库的邮箱
+    git config user.email"Lou@fzi.com"：修改你本地一个仓库的邮箱  
+    
+## 为git配置多个账号  
+**1. 创建多个ssh-key并保存在不同的位置**
+    
+    ssh-keygen -t rsa -C "你的github注册邮箱地址"。
+    ssh-keygen -t rsa -C "你的gitlab注册邮箱地址"。
+    
+提示你填写你的系统盘下用户目录安放ssh密钥的目录，请使用自己电脑上相对应的目录, 此处默认会存放在c盘的用户名下的.ssh文件夹下。这里我选择分别存放在~/.ssh/github-key/和~/.ssh/gitlab-key下面，然后复制并填写相应的public key到你的github账号或是gitlab。你也可以都放在~/.ssh/下但是给key赋不同的名字。  
+**2. 创建配置文件**
+如果~/.ssh没有config文件需要先创建一个，然后在里面写上如下内容：  
+    
+    # 第一个账号，这里只是起到注释的作用
+    Host AAA 
+    HostName gitlab.com
+    IdentityFile ~/.ssh/gitlab-key/id_rsa
+    User your-email
+
+    # 第二个账号
+    Host BBB
+    HostName github.com
+    IdentityFile ~/.ssh/github-key/id_rsa
+    User your-email
+    
+**3. 为你的git添加多个ssh key**
+    
+    ssh-agent bash
+    ssh-add ~/.ssh/github-key/id_rsa
+    ssh-add ~/.ssh/gitlab-key/id_rsa
+    
+**4. 验证**
+    
+    ssh -T git@github.com
+    ssh -T git@gitlab.com
+成功后会显示Hi blueberrygarden! You've successfully authenticated, but GitHub does not provide shell access.  
+或是Welcome to GitLab, @Lou!  
 
 ## 使用git bash进行代码下载和上传  
 
 **1. 将GitHub上的的Repository克隆到本地电脑中**  
 根据个人习惯，可以将自己的文件储存在d盘中，所以需要将git bash定位在d盘  
 
-    github
     $ cd /d/git/
     $ git clone https://github.com/blueberrygarden/yourrepo.git   
 git clone后边的网址就是你创建的Repository的网址，此时打开D盘会出现一个同名文件夹  
@@ -61,8 +95,8 @@ ls的作用是查看你目前所定位的文件夹中的文件，此时里面将
 "main" 要与你git bash输入指令前的一串路径标识最后（）中的内容相同, 在gitlab中是master  
 
     ****@PC*********** MINGW64 /D/How-to-use-Git-on-windows (main) 
-之后回到网页版GitHub中打开自己的库How-to-use-Git-on-windows，新的文档已经出现了
-**3. 上传文件夹的内容**
+之后回到网页版GitHub中打开自己的库How-to-use-Git-on-windows，新的文档已经出现了  
+**3. 上传文件夹的内容**  
     
     $ cd folder     # 切换到到该目录下
     $ git add ./*   # 暂存到本地仓库 
