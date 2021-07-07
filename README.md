@@ -29,12 +29,13 @@ gitlab的ssh key绑定方式类似
     $ git config --global user.name "blueberrygarden"
     $ git config --global user.email "jiaojiaoyutianan@gmail.com"
 输入上边的代码，name和email对应账户名称和注册邮箱
+    
+    
+    git config user.name “blueberrygarden”：修改你本地一个仓库的用户名
+    git config user.email"jiaojiaoyutianan@gmail.com"：修改你本地一个仓库的邮箱
 
-git config user.name “你的用户名”：修改你本地一个仓库的用户名
-git config user.email"你的邮箱"：修改你本地一个仓库的邮箱
-
-git config --global user.name"你的用户名"：修改全局仓库的用户名
-git config --global user.email"你的邮箱"：修改全局仓库的邮箱
+    git config --global user.name"Yanjiao Lou"：修改全局仓库的用户名
+    git config --global user.email"Lou@fzi.com"：修改全局仓库的邮箱
 
 ## 使用git bash进行代码下载和上传  
 
