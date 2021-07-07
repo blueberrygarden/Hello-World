@@ -81,8 +81,12 @@ git clone后边的网址就是你创建的Repository的网址，此时打开D盘
     $ cd /D/git/yourrepo
 此时再将git bash定位到本地仓库的文件夹
 
-    & ls
+    $ ls
 ls的作用是查看你目前所定位的文件夹中的文件，此时里面将出现README.md等内容  
+    
+    $ ll -lA
+查看隐藏文件夹
+
 **2. 创建新文档并上传到GitHub的库中**  
 打开本地库的文件夹youtrepo，在其中创建一个新文档test.txt  
 在git bash中输入以下代码, 并给需要上传的文档进行备注
@@ -103,7 +107,7 @@ ls的作用是查看你目前所定位的文件夹中的文件，此时里面将
     $ git commit -m 'xxx'   # 提交到本地仓库
     $ git push 
 
-**gitlab使用说明**  
+## gitlab使用说明  
 You can also upload existing files from your computer using the instructions below.  
 Git global setup  
 
@@ -133,7 +137,7 @@ Push an existing Git repository
     $ git push -u origin --all
     $ git push -u origin --tags
   
-可能遇到的问题  
+## 可能遇到的问题  
 1.在我们在提交git时有时候会出现错误[rejected] master -> master (fetch first)  
 出现这个原因是仓库中的代码和本地中的代码不一致，需要先将仓库里的代码pull下来再push     
     
