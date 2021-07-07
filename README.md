@@ -29,13 +29,9 @@ gitlab的ssh key绑定方式类似
     $ git config --global user.name "blueberrygarden"
     $ git config --global user.email "jiaojiaoyutianan@gmail.com"
 输入上边的代码，name和email对应账户名称和注册邮箱
-    
-    
-    git config user.name “blueberrygarden”：修改你本地一个仓库的用户名
-    git config user.email"jiaojiaoyutianan@gmail.com"：修改你本地一个仓库的邮箱
 
-    git config --global user.name"Yanjiao Lou"：修改全局仓库的用户名
-    git config --global user.email"Lou@fzi.com"：修改全局仓库的邮箱
+    git config user.name"Yanjiao Lou"：修改你本地一个仓库的用户名
+    git config user.email"Lou@fzi.com"：修改你本地一个仓库的邮箱
 
 ## 使用git bash进行代码下载和上传  
 
@@ -66,6 +62,12 @@ ls的作用是查看你目前所定位的文件夹中的文件，此时里面将
 
     ****@PC*********** MINGW64 /D/How-to-use-Git-on-windows (main) 
 之后回到网页版GitHub中打开自己的库How-to-use-Git-on-windows，新的文档已经出现了
+**3. 上传文件夹的内容**
+    
+    $ cd folder     # 切换到到该目录下
+    $ git add ./*   # 暂存到本地仓库 
+    $ git commit -m 'xxx'   # 提交到本地仓库
+    $ git push 
 
 **gitlab使用说明**  
 You can also upload existing files from your computer using the instructions below.  
