@@ -157,4 +157,15 @@ Push an existing Git repository
 原因是存在符号转义问题  
 windows中的换行符为 CRLF， 而在linux下的换行符为LF，所以在执行add . 时出现提示，解决办法：  
 
-    $ git config --global core.autocrlf false
+    $ git config --global core.autocrlf false   
+3. git修改已经push过的commit message：
+    
+    $ git rebase -i HEAD~1
+
+1代表倒数第一条提交记录，也可根据需要改成2，3，4,..., 在弹出的编辑页面，将要修改的错误的commit message前面的“pick”改为“reword”，然后保存  
+保存后会再弹出一个编辑页面，将里面错误的commit message改为想要的，然后保存  
+最后强制push吧
+4、git push –force
+————————————————
+版权声明：本文为CSDN博主「西小邪_kim」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/xixiaoxie2/article/details/78196182
