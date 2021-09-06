@@ -162,10 +162,26 @@ windows中的换行符为 CRLF， 而在linux下的换行符为LF，所以在执
     
     $ git rebase -i HEAD~1
 
-1代表倒数第一条提交记录，也可根据需要改成2，3，4,..., 在弹出的编辑页面，将要修改的错误的commit message前面的“pick”改为“reword”，然后保存  
-保存后会再弹出一个编辑页面，将里面错误的commit message改为想要的，然后保存  
-最后强制push吧
-4、git push –force
-————————————————
-版权声明：本文为CSDN博主「西小邪_kim」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/xixiaoxie2/article/details/78196182
+4. 删除远程文件的命令：   
+  
+git rm -r --cached dirname  
+git commit -m "delete file"  
+git push origin master  
+  
+如,要删除FragmentTabLayout-master项目文件  
+  
+git rm -r --cached FragmentTabLayout-master  
+git commit -m "delete file"  
+git push origin master  
+  
+提交代码到github上的命令  
+  
+git add dirname    
+git commit -m "first commit"  
+git push origin master  
+  
+如， 要提交项目FragmentTabLayout-master项目文件到github上  
+
+git add FragmentTabLayout-master  
+git commit -m "first commit"  
+git push origin master  
